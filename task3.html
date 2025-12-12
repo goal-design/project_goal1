@@ -1,577 +1,294 @@
-/* Общие стили и сброс браузерных отступов */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Основные настройки для всего документа */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
-
-/* Контейнер для центрирования контента и ограничения максимальной ширины */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Общие стили для заголовков секций */
-.section {
-    padding: 80px 0;
-}
-
-.section-title {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-.section-subtitle {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto 50px;
-}
-
-/* Стили для кнопок */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: #d32f2f;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #b71c1c;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: #d32f2f;
-    border: 2px solid #d32f2f;
-}
-
-.btn-secondary:hover {
-    background-color: #d32f2f;
-    color: white;
-}
-
-/* Стили для шапки */
-.header {
-    background-color: pink;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-/* Логотип в шапке */
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #222;
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
-.logo i {
-    color: #d32f2f;
-    margin-right: 10px;
-    font-size: 1.8rem;
-}
-
-/* Навигационное меню */
-.nav {
-    display: flex;
-    align-items: center;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
-    margin: 0 5px;
-    font-weight: 500;
-    transition: color 0.3s;
-    border-radius: 4px;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: #d32f2f;
-    background-color: rgba(211, 47, 47, 0.05);
-}
-
-/* Кнопка мобильного меню (скрыта по умолчанию) */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #333;
-    cursor: pointer;
-}
-
-/* Стили для герой-секции */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 150px 0;
-    text-align: center;
-}
-
-.hero-title {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-text {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.8;
-}
-
-/* Стили для секции "Об Абхазии" */
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.about-image {
-    flex: 1;
-}
-
-.about-image img {
-    width: 70%;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Стили для карточек направлений */
-.destinations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.destination-card {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.destination-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.destination-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.destination-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.destination-card:hover .destination-image img {
-    transform: scale(1.05);
-}
-
-.destination-content {
-    padding: 20px;
-}
-
-.destination-title {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.destination-text {
-    color: #666;
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.destination-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #d32f2f;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.destination-link:hover {
-    color: #b71c1c;
-}
-
-.destination-link i {
-    margin-left: 5px;
-    transition: transform 0.3s;
-}
-
-.destination-link:hover i {
-    transform: translateX(5px);
-}
-
-/* Стили для галереи */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item {
-    height: 250px;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-/* Стили для секции контактов */
-.contact-content {
-    display: flex;
-    gap: 50px;
-    margin-top: 30px;
-}
-
-.contact-form {
-    flex: 1;
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #d32f2f;
-    outline: none;
-}
-
-.contact-info {
-    flex: 1;
-}
-
-.contact-info h3 {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-.contact-list {
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.contact-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.contact-list i {
-    color: #d32f2f;
-    margin-right: 15px;
-    font-size: 1.2rem;
-    width: 20px;
-    text-align: center;
-}
-
-.contact-list a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
-}
-
-.contact-list a:hover {
-    color: #d32f2f;
-}
-
-.social-links p {
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    color: #333;
-    font-size: 1.2rem;
-    transition: all 0.3s;
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    background-color: #d32f2f;
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* Стили для подвала */
-.footer {
-    background-color: pink;
-    color: white;
-    padding: 50px 0 20px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.footer-info {
-    flex: 1;
-}
-
-.footer-info .logo {
-    color: white;
-    margin-bottom: 20px;
-}
-
-.footer-info p {
-    color: black;
-    max-width: 400px;
-}
-
-.footer-links {
-    flex: 0 0 200px;
-}
-
-.footer-links h4 {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: white;
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #444;
-    color: black;
-    font-size: 0.9rem;
-}
-
-/* Адаптивность для планшетов и мобильных устройств */
-
-/* Планшеты (ширина до 992px) */
-@media (max-width: 992px) {
-    .section-title {
-        font-size: 2rem;
-    }
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путешествия по Абхазии - Итоговая работа</title>
     
-    .hero-title {
-        font-size: 2.8rem;
-    }
+    <!-- Подключение стилей CSS -->
+    <link rel="stylesheet" href="style.css">
     
-    .about-content {
-        flex-direction: column;
-    }
+    <!-- Подключение иконочного шрифта (Font Awesome) для декоративных иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    .contact-content {
-        flex-direction: column;
-    }
-}
+    <!-- Шрифт Google Fonts для улучшения типографики -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+        Основная структура сайта:
+        1. Header - шапка с логотипом и навигацией
+        2. Main - основное содержимое страницы
+        3. Footer - подвал сайта
+    -->
+    
+    <!-- Header: Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <!-- Логотип сайта с ссылкой на главную страницу -->
+            <a href="#" class="logo">
+                <i class="fas fa-mountain-sun"></i>
+                <span>Путешествия по Абхазии</span>
+            </a>
+            
+            <!-- Навигационное меню -->
+            <nav class="nav">
+                <!-- Список навигационных ссылок -->
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#about" class="nav-link">Об Абхазии</a></li>
+                    <li><a href="#destinations" class="nav-link">Направления</a></li>
+                    <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+                
+                <!-- Кнопка для мобильного меню (будет скрыта на десктопе) -->
+                <button class="mobile-menu-btn" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-/* Мобильные устройства (ширина до 768px) */
-@media (max-width: 768px) {
-    .section {
-        padding: 60px 0;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .hero {
-        padding: 100px 0;
-    }
-    
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .hero-text {
-        font-size: 1rem;
-    }
-    
-    /* Скрываем обычное меню на мобильных */
-    .nav-list {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        flex-direction: column;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-    }
-    
-    .nav-list.active {
-        display: flex;
-    }
-    
-    .nav-link {
-        padding: 15px 20px;
-        margin: 0;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    /* Показываем кнопку мобильного меню */
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-}
+    <!-- Main: Основное содержимое страницы -->
+    <main class="main">
+        <!-- Секция: Герой (приветственный блок) -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Заголовок первого уровня (самый важный на странице) -->
+                    <h1 class="hero-title">Откройте для себя удивительную страну Абхазию!</h1>
+                    
+                    <!-- Параграф с кратким описанием -->
+                    <p class="hero-text">Древняя культура, живописные пейзажи и уникальные места.</p>
+                    
+                    <!-- Кнопка-призыв к действию -->
+                    <a href="#destinations" class="btn btn-primary">Выбрать направление для отдыха</a>
+                </div>
+            </div>
+        </section>
 
-/* Мелкие мобильные устройства (ширина до 480px) */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .destinations-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        <!-- Секция: Об Абхазии -->
+        <section id="about" class="about section">
+            <div class="container">
+                <!-- Заголовок второго уровня для секции -->
+                <h2 class="section-title">Почему стоит посетить Абхазию?</h2>
+                
+                <div class="about-content">
+                    <!-- Левая колонка с текстом -->
+                    <div class="about-text">
+                        <!-- Параграфы с текстовым контентом -->
+                        <p>Абхазия - страна с богатой историей и уникальными культурными традициями.</p>
+                        <p>Древние храмы, заповедники с реликтовыми растениями и деревьями, водопады и реки, чистейшее Черное море - каждое место Абхазии подарит Вам уникальные впечатления.</p>
+                        <p>А Абхазкая кухня покорит Вас своим калоритом и изысканным вкусом.</p
+                        
+                        <!-- Кнопка для перехода к следующему разделу -->
+                        <a href="#destinations" class="btn btn-secondary">Узнать больше</a>
+                    </div>
+                    
+                    <!-- Правая колонка с изображением -->
+                    <div class="about-image">
+                        <!-- Изображение с описательным alt-текстом для доступности --> 
+                        <img src="https://wikiway.com/upload/uf/6d5/abhazia_1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Популярные направления -->
+        <section id="destinations" class="destinations section">
+            <div class="container">
+                <h2 class="section-title">Популярные направления</h2>
+                <p class="section-subtitle">Выберите маршрут для Вашего путешествия</p>
+                
+                <!-- Контейнер для карточек направлений -->
+                <div class="destinations-grid">
+                    <!-- Карточка направления 1 -->
+                    <article class="destination-card">
+                        <!-- Изображение для карточки -->
+                        <div class="destination-image">
+                            <img src="https://irecommend.ru/sites/default/files/imagecache/copyright1/user-images/1254950/tboKwXX6i6pDXTCh79fPSA.jpg" alt="">
+                        </div>
+                        
+                        <!-- Контент карточки -->
+                        <div class="destination-content">
+                            <h3 class="destination-title">Пицунда</h3>
+                            <p class="destination-text"> Посетите реликтовый заповедник, бамбуковую рощу, древний храм. Посетите концерты органной музыки и ансамбля национального танца.</p>
+                           <!-- Ссылка для детального просмотра -->
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Карточка направления 2 -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                       <img src="https://avatars.mds.yandex.net/get-altay/6444937/2a00000181aea80ca5bbda998358fd886060/XXXL" alt="">
+                        </div>
+                        <div class="destination-content">
+                            <h3 class="destination-title">Гагры</h3>
+                            <p class="destination-text">Посетите Дельфинарий и Аквапарк,подарите себе незабываемые впечатления.</p>
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Карточка направления 3 -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://i.ibb.co/LdWgd8V/14.jpg" alt="">
+                        </div>
+                        <div class="destination-content">
+                            <h3 class="destination-title">Сухум</h3>
+                            <p class="destination-text">Здесь Вы сможете посетить ботанический сад, прогуляться по красивейшей набережной, посетить монастыри</p>
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Карточка направления 4 -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://avatars.mds.yandex.net/i?id=6b91989eeacbdd991299784572897518_l-5233155-images-thumbs&n=13" alt="">
+                        </div>
+                        <div class="destination-content">
+                            <h3 class="destination-title">Новый Афон</h3>
+                            <p class="destination-text">Здесь Вы посетите уникальный Новоафонский монастырь и увидите карстовые пещеры</p>.</p>
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Галерея -->
+        <section id="gallery" class="gallery section">
+            <div class="container">
+                <h2 class="section-title">Галерея путешествий</h2>
+                <p class="section-subtitle">Вдохновитесь красотами Абхазии</p>
+                
+                <!-- Сетка для галереи изображений -->
+                <div class="gallery-grid">
+                    <!-- Каждое изображение в галерее -->
+                    <div class="gallery-item">
+                        <img src="https://avatars.mds.yandex.net/i?id=672543e1c81531447a473a8c14979b9c_l-5179158-images-thumbs&n=13" alt="">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://avatars.mds.yandex.net/i?id=8dc98cac39d21c7b763dad6b25f120d5c4879278-13315631-images-thumbs&n=13" alt="">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://cdn-irec.r-99.com/sites/default/files/imagecache/copyright1/user-images/46864/ZwtwDNUUFl1oXKrSMuNGg.jpg" alt="">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://avatars.mds.yandex.net/i?id=5d302fd3b345ead81b9207e1f499d203bf3320dc-5876168-images-thumbs&n=13" alt="">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://avatars.mds.yandex.net/i?id=f499f40ab8ed511cb13983f6fa8f478124f42594-7753642-images-thumbs&n=13" alt="">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://avatars.mds.yandex.net/i?id=a67ffa2c3d36201010072a9ecd279f87f5de904f-9044040-images-thumbs&ref=rim&n=33&w=480&h=270" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Контакты -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <p class="section-subtitle">Готовы отправиться в путешествие? Оставьте заявку!</p>
+                
+                <div class="contact-content">
+                    <!-- Форма обратной связи -->
+                    <form class="contact-form">
+                        <!-- Поле ввода для имени -->
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" placeholder="Введите ваше имя" required>
+                        </div>
+                        
+                        <!-- Поле ввода для email -->
+                        <div class="form-group">
+                            <label for="email">Ваш email</label>
+                            <input type="email" id="email" placeholder="Введите ваш email" required>
+                        </div>
+                        
+                        <!-- Текстовое поле для сообщения -->
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" placeholder="Расскажите о ваших планах путешествия..." rows="5" required></textarea>
+                        </div>
+                        
+                        <!-- Кнопка отправки формы -->
+                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    </form>
+                    
+                    <!-- Контактная информация -->
+                    <div class="contact-info">
+                        <h3>Контактная информация</h3>
+                        <ul class="contact-list">
+                            <!-- Ссылка на email -->
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:infoks77@mail.ru">infoks77@mail.ru</a>
+                            </li>
+                            <!-- Ссылка на телефон -->
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:++7(903)815-50-63">+7(903)815-50-63</a>
+                            </li>
+                            <!-- Адрес -->
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Обнинск, ул. Ленина, д. 53</span>
+                            </li>
+                        </ul>
+                        
+                        <!-- Социальные сети -->
+                        <div class="social-links">
+                            <p>Мы в социальных сетях:</p>
+                            <div class="social-icons">
+                                <!-- Ссылки на социальные сети с иконками -->
+                                <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                                <a href="#" aria-label="Телеграм"><i class="fab fa-telegram"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Информация о сайте в подвале -->
+                <div class="footer-info">
+                    <a href="#" class="logo">
+                        <i class="fas fa-mountain-sun"></i>
+                        <span>Путешествия по Абхазии</span>
+                    </a>
+                    <p>Итоговая аттестационная работа по созданию сайта. Все права защищены.</p>
+                </div>
+                
+                <!-- Быстрые ссылки в подвале -->
+                <div class="footer-links">
+                    <h4>Быстрые ссылки</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">Об Абхазии</a></li>
+                        <li><a href="#destinations">Направления</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Копирайт -->
+            <div class="copyright">
+                <p>&copy; 2025 Путешествия по Абхазии. Итоговая аттестационная работа.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
