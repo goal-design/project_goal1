@@ -1,357 +1,577 @@
+/* Общие стили и сброс браузерных отступов */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Основные настройки для всего документа */
 body {
-    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color:#120505;
-    color:#c4df12;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
-/* === Закреплённое меню === */
-header {
+/* Контейнер для центрирования контента и ограничения максимальной ширины */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Общие стили для заголовков секций */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+/* Стили для кнопок */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #b71c1c;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #d32f2f;
+    border: 2px solid #d32f2f;
+}
+
+.btn-secondary:hover {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* Стили для шапки */
+.header {
+    background-color: pink;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    background: red; /*#34502c;*/
-    padding: 1rem 2rem;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(131, 50, 50, 0.1);
+}
+
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 20px;
 }
 
+/* Логотип в шапке */
 .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: rgb(171, 162, 223);
-    text-decoration: none;
-}
-
-.logo span {
-    color: #1e3fe3;
-}
-
-.main-title {
-    color: rgb(214, 231, 145);
-    font-size: 1.3rem;
-    font-weight: 600;
-    flex-grow: 1;
-    text-align: center;
-    margin: 0 1.5rem;
-}
-
-.nav-menu {
     display: flex;
-    gap: 1.2rem;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
-.nav-menu a {
-    color: rgb(228, 146, 146);
+.logo i {
+    color: #d32f2f;
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+/* Навигационное меню */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
     text-decoration: none;
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
+    color: #333;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-weight: 500;
+    transition: color 0.3s;
     border-radius: 4px;
-    transition: background-color 0.2s ease;
 }
 
-.nav-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.nav-link:hover, .nav-link.active {
+    color: #d32f2f;
+    background-color: rgba(211, 47, 47, 0.05);
 }
 
-/* === Основной блок "Где применяются..." === */
-.hero {
-    background:linear-gradient(135deg, #3498db, #2c3e50);
-    color: black;
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-    font-weight: 700;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 2rem auto 0;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 2rem;
-    border-radius: 12px;
-    width: 280px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(216, 65, 65, 0.1);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(208, 16, 16, 0.2);
-}
-
-.card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: black;/*rgb(221, 244, 177);*/
-}
-
-.card p {
-    color: rgba(233, 16, 16, 0.9);
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* === Как работают нейросети === */
-.how-it-works {
-    background: pink;
-    padding: 4rem 2rem;
-    text-align: center;
-    margin: 3rem 0;
-}
-
-.how-it-works h2 {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
-    color: #d3189b;
-    font-weight: 700;
-}
-
-.steps {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.step {
-    background: #f8f9fa;
-    padding: 2rem 1.5rem;
-    border-radius: 12px;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
-    border: 1px solid #e9ecef;
-}
-
-.step:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-.step-number {
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    background: #3498db;
-    color: white;
-    border-radius: 50%;
-    line-height: 45px;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    font-size: 1.2rem;
-}
-
-.step h3 {
-    color: #2c3e50;
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.step p {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-/* === Будущее нейросетей === */
-.future {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: black;
-    padding: 4rem 2rem;
-    text-align: center;
-    margin: 3rem 0;
-}
-
-.future h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-
-.future p {
-    max-width: 700px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.7;
-    color:rgba(255, 255, 255, 0.9);
-    font-size: 1.05rem;
-    text-align:justify;
-}
-
-.btn {
-    padding: 0.9rem 2.5rem;
-    background: #e74c3c;
-    color: black;
+/* Кнопка мобильного меню (скрыта по умолчанию) */
+.mobile-menu-btn {
+    display: none;
+    background: none;
     border: none;
-    border-radius: 6px;
+    font-size: 1.5rem;
+    color: #333;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn:hover {
-    background: #c0392b;
-    transform: translateY(-2px);
-}
-
-/* === Футер === */
-footer {
-    background: #2c3e50;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
+/* Стили для герой-секции */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
     text-align: center;
+}
+
+.hero-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+/* Стили для секции "Об Абхазии" */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 70%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для карточек направлений */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.destination-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.destination-card:hover .destination-image img {
+    transform: scale(1.05);
+}
+
+.destination-content {
+    padding: 20px;
+}
+
+.destination-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.destination-text {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.destination-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #d32f2f;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.destination-link:hover {
+    color: #b71c1c;
+}
+
+.destination-link i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.destination-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Стили для галереи */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Стили для секции контактов */
+.contact-content {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d32f2f;
+    outline: none;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.contact-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact-list i {
+    color: #d32f2f;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: #d32f2f;
+}
+
+.social-links p {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color: #333;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: #d32f2f;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Стили для подвала */
+.footer {
+    background-color: pink;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-info {
+    flex: 1;
+}
+
+.footer-info .logo {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    color: black;
+    max-width: 400px;
+}
+
+.footer-links {
+    flex: 0 0 200px;
+}
+
+.footer-links h4 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: black;
     font-size: 0.9rem;
-    margin-top: 3rem;
 }
 
-footer p {
-    max-width: 600px;
-    margin: 0 auto;
-    color: rgba(255, 255, 255, 0.8);
+/* Адаптивность для планшетов и мобильных устройств */
+
+/* Планшеты (ширина до 992px) */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+    }
 }
 
-/* === Адаптивность === */
+/* Мобильные устройства (ширина до 768px) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
+    .section {
+        padding: 60px 0;
     }
     
-    .logo {
-        font-size: 1.4rem;
-    }
-    
-    .main-title {
-        font-size: 1.1rem;
-        margin: 0.5rem 0;
-        order: 1;
-    }
-    
-    .nav-menu {
-        gap: 0.8rem;
-    }
-    
-    .nav-menu a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .hero h1 {
-        font-size: 1.9rem;
-    }
-    
-    .hero,
-    .how-it-works,
-    .future {
-        padding: 3rem 1.5rem;
-    }
-    
-    .cards,
-    .steps {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    
-    .card,
-    .step {
-        width: 100%;
-        max-width: 400px;
-    }
-    
-    .how-it-works h2,
-    .future h2 {
+    .section-title {
         font-size: 1.8rem;
     }
     
-    .future p {
+    .hero {
+        padding: 100px 0;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text {
         font-size: 1rem;
     }
     
-    .btn {
-        padding: 0.8rem 2rem;
-        font-size: 0.95rem;
+    /* Скрываем обычное меню на мобильных */
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+    
+    .nav-list.active {
+        display: flex;
+    }
+    
+    .nav-link {
+        padding: 15px 20px;
+        margin: 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    /* Показываем кнопку мобильного меню */
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
     }
 }
 
+/* Мелкие мобильные устройства (ширина до 480px) */
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.6rem;
+    .container {
+        padding: 0 15px;
     }
     
-    .future p {
-        font-size: 0.95rem;
+    .hero-title {
+        font-size: 1.8rem;
     }
     
     .btn {
-        padding: 0.7rem 1.8rem;
+        padding: 10px 20px;
         font-size: 0.9rem;
     }
     
-    .step-number {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 1.1rem;
+    .destinations-grid {
+        grid-template-columns: 1fr;
     }
     
-    .card h3,
-    .step h3 {
-        font-size: 1.2rem;
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }
-
-/* Простые анимации */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero h1,
-.card,
-.step,
-.future h2,
-.future p,
-.btn {
-    animation: fadeIn 0.6s ease forwards;
-}
-
-.card:nth-child(2) { animation-delay: 0.1s; }
-.card:nth-child(3) { animation-delay: 0.2s; }
-.step:nth-child(2) { animation-delay: 0.1s; }
-.step:nth-child(3) { animation-delay: 0.2s; }
-.step:nth-child(4) { animation-delay: 0.3s; }
-.future p { animation-delay: 0.1s; }
-.btn { animation-delay: 0.2s; }
