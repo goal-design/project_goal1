@@ -1,12 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Путешествия по Китаю - Итоговая работа</title>
+    
+    <!-- Подключение стилей CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Подключение иконочного шрифта (Font Awesome) для декоративных иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Шрифт Google Fonts для улучшения типографики -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <li><a href="task3.html">Задание 3</a></li>
+    <!-- 
+        Основная структура сайта:
+        1. Header - шапка с логотипом и навигацией
+        2. Main - основное содержимое страницы
+        3. Footer - подвал сайта
+    -->
+    
+    <!-- Header: Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <!-- Логотип сайта с ссылкой на главную страницу -->
+            <a href="#" class="logo">
+                <i class="fas fa-mountain-sun"></i>
+                <span>Путешествия по Китаю</span>
+            </a>
+            
+            <!-- Навигационное меню -->
+            <nav class="nav">
+                <!-- Список навигационных ссылок -->
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#about" class="nav-link">О Китае</a></li>
+                    <li><a href="#destinations" class="nav-link">Направления</a></li>
+                    <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+                
+                <!-- Кнопка для мобильного меню (будет скрыта на десктопе) -->
+                <button class="mobile-menu-btn" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main: Основное содержимое страницы -->
+    <main class="main">
+        <!-- Секция: Герой (приветственный блок) -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Заголовок первого уровня (самый важный на странице) -->
+                    <h1 class="hero-title">Откройте для себя удивительный Китай</h1>
+                    
+                    <!-- Параграф с кратким описанием -->
+                    <p class="hero-text">Древняя культура, современные мегаполисы, живописные пейзажи и уникальная кухня. Погрузитесь в мир контрастов и откройте для себя настоящий Китай.</p>
+                    
+                    <!-- Кнопка-призыв к действию -->
+                    <a href="#destinations" class="btn btn-primary">Выбрать маршрут</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: О Китае -->
+        <section id="about" class="about section">
+            <div class="container">
+                <!-- Заголовок второго уровня для секции -->
+                <h2 class="section-title">Почему стоит посетить Китай?</h2>
+                
+                <div class="about-content">
+                    <!-- Левая колонка с текстом -->
+                    <div class="about-text">
+                        <!-- Параграфы с текстовым контентом -->
+                        <p>Китай - страна с одной из древнейших цивилизаций, богатой историей и культурным наследием. Это место, где древние традиции гармонично сочетаются с современными технологиями.</p>
+                        <p>От Великой Китайской стены до небоскребов Шанхая, от терракотовой армии в Сиане до рисовых террас в Лунцзи - каждый регион Китая предлагает уникальные впечатления.</p>
+                        <p>Китайская кухня, признанная ЮНЕСКО частью всемирного наследия, покорит вас своим разнообразием и изысканным вкусом.</p>
+                        
+                        <!-- Кнопка для перехода к следующему разделу -->
+                        <a href="#destinations" class="btn btn-secondary">Узнать больше</a>
+                    </div>
+                    
+                    <!-- Правая колонка с изображением -->
+                    <div class="about-image">
+                        <!-- Изображение с описательным alt-текстом для доступности -->
+                        <img src="https://images.unsplash.com/photo-1547981609-4b6bf2b8438c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Великая Китайская стена на закате">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Популярные направления -->
+        <section id="destinations" class="destinations section">
+            <div class="container">
+                <h2 class="section-title">Популярные направления</h2>
+                <p class="section-subtitle">Выберите маршрут для вашего следующего путешествия</p>
+                
+                <!-- Контейнер для карточек направлений -->
+                <div class="destinations-grid">
+                    <!-- Карточка направления 1 -->
+                    <article class="destination-card">
+                        <!-- Изображение для карточки -->
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1512529904539-2034f9e1c8b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Запретный город в Пекине">
+                        </div>
+                        
+                        <!-- Контент карточки -->
+                        <div class="destination-content">
+                            <h3 class="destination-title">Пекин</h3>
+                            <p class="destination-text">Столица Китая, где история встречается с современностью. Посетите Запретный город, Летний дворец и, конечно, Великую Китайскую стену.</p>
+                            
+                            <!-- Ссылка для детального просмотра -->
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Карточка направления 2 -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Панорама Шанхая с небоскребами">
+                        </div>
+                        <div class="destination-content">
+                            <h3 class="destination-title">Шанхай</h3>
+                            <p class="destination-text">Самый современный мегаполис Китая. Знаменитая набережная Вайтань, небоскребы Пудуна и традиционные сады Юйюань.</p>
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Карточка направления 3 -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Горы в Гуйлине на реке Ли">
+                        </div>
+                        <div class="destination-content">
+                            <h3 class="destination-title">Гуйлинь</h3>
+                            <p class="destination-text">Живописный регион с карстовыми пейзажами, который вдохновлял китайских художников на протяжении веков. Река Ли и рисовые террасы.</p>
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Карточка направления 4 -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1580651214613-f4692d6d138f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Терракотовая армия в Сиане">
+                        </div>
+                        <div class="destination-content">
+                            <h3 class="destination-title">Сиань</h3>
+                            <p class="destination-text">Древняя столица Китая, отправная точка Великого шелкового пути. Здесь находится знаменитая терракотовая армия императора Цинь Шихуанди.</p>
+                            <a href="#" class="destination-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Галерея -->
+        <section id="gallery" class="gallery section">
+            <div class="container">
+                <h2 class="section-title">Галерея путешествий</h2>
+                <p class="section-subtitle">Вдохновитесь красотами Китая</p>
+                
+                <!-- Сетка для галереи изображений -->
+                <div class="gallery-grid">
+                    <!-- Каждое изображение в галерее -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551641500-87c4b2cbe1c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Храм в горах">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1547143379-5f5d4b2c9157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Рисовые террасы">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Городской пейзаж ночью">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1510549260578-4c9c7c8347c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Традиционная архитектура">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Пейзаж с рекой и горами">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Пагода на озере">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Контакты -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <p class="section-subtitle">Готовы отправиться в путешествие? Оставьте заявку!</p>
+                
+                <div class="contact-content">
+                    <!-- Форма обратной связи -->
+                    <form class="contact-form">
+                        <!-- Поле ввода для имени -->
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" placeholder="Введите ваше имя" required>
+                        </div>
+                        
+                        <!-- Поле ввода для email -->
+                        <div class="form-group">
+                            <label for="email">Ваш email</label>
+                            <input type="email" id="email" placeholder="Введите ваш email" required>
+                        </div>
+                        
+                        <!-- Текстовое поле для сообщения -->
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" placeholder="Расскажите о ваших планах путешествия..." rows="5" required></textarea>
+                        </div>
+                        
+                        <!-- Кнопка отправки формы -->
+                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    </form>
+                    
+                    <!-- Контактная информация -->
+                    <div class="contact-info">
+                        <h3>Контактная информация</h3>
+                        <ul class="contact-list">
+                            <!-- Ссылка на email -->
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@china-travel.ru">info@china-travel.ru</a>
+                            </li>
+                            <!-- Ссылка на телефон -->
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+78001234567">8 (800) 123-45-67</a>
+                            </li>
+                            <!-- Адрес -->
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Москва, ул. Китайгородская, 7</span>
+                            </li>
+                        </ul>
+                        
+                        <!-- Социальные сети -->
+                        <div class="social-links">
+                            <p>Мы в социальных сетях:</p>
+                            <div class="social-icons">
+                                <!-- Ссылки на социальные сети с иконками -->
+                                <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                                <a href="#" aria-label="Телеграм"><i class="fab fa-telegram"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Информация о сайте в подвале -->
+                <div class="footer-info">
+                    <a href="#" class="logo">
+                        <i class="fas fa-mountain-sun"></i>
+                        <span>Путешествия по Китаю</span>
+                    </a>
+                    <p>Итоговая аттестационная работа по созданию сайта. Все права защищены.</p>
+                </div>
+                
+                <!-- Быстрые ссылки в подвале -->
+                <div class="footer-links">
+                    <h4>Быстрые ссылки</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О Китае</a></li>
+                        <li><a href="#destinations">Направления</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Копирайт -->
+            <div class="copyright">
+                <p>&copy; 2023 Путешествия по Китаю. Итоговая аттестационная работа.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
+
